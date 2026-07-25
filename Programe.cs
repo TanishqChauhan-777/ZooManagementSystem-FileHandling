@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Data.SqlClient;
 
 namespace ZooManagementSystem
 {
@@ -70,11 +71,7 @@ namespace ZooManagementSystem
             Console.WriteLine();
         }
 
-        // =====================================================
-        // ===== New Method (Changed by ChatGPT)
-        // Animal Menu moved outside Main()
-        // =====================================================
-
+      
         static void AnimalManagementMenu(AnimalManager animalManager)
         {
             while (true)
@@ -131,9 +128,7 @@ namespace ZooManagementSystem
                         animalManager.DeleteAnimal();
                         break;
 
-                    case 6:
-
-                        // Return to Main Menu
+                    case 6:                   
                         return;
 
                     default:
@@ -146,11 +141,7 @@ namespace ZooManagementSystem
                 Console.ReadKey();
             }
         }
-        // =====================================================
-        // ===== New Method (Changed by ChatGPT)
-        // Employee Menu moved outside Main()
-        // =====================================================
-
+        
         static void EmployeeManagementMenu(EmployeeManager employeeManager)
         {
             while (true)
@@ -208,9 +199,6 @@ namespace ZooManagementSystem
                         break;
 
                     case 6:
-
-                        // ===== Changed by ChatGPT =====
-                        // Back to Main Menu
                         return;
 
                     default:
@@ -223,11 +211,7 @@ namespace ZooManagementSystem
                 Console.ReadKey();
             }
         }
-        // =====================================================
-        // ===== Changed by ChatGPT =====
-        // Clean Main Method (goto removed)
-        // =====================================================
-
+        
         static void Main(string[] args)
         {
             AnimalManager animalManager = new AnimalManager();

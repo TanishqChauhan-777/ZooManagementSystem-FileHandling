@@ -124,73 +124,22 @@ namespace ZooManagementSystem
             string name = InputHelper.ReadString("Enter Employee Name: ");
 
             Console.WriteLine();
-            int age;
-            do
-            {
-                age = InputHelper.ReadInt("Enter Employee Age: ");
-
-                if (age < 0 || age > 100)
-                {
-                    Console.WriteLine("Invalid Age! Please Try Agian");
-
-                }
-            } while (age < 0 || age > 100);
+            int age = InputHelper.ReadAge();
 
             Console.WriteLine();
             Gender gender = InputHelper.ReadGender();
 
-
-
             Console.WriteLine();
             EmployeeRole Role = InputHelper.ReadEmployeeRole();
 
+            Console.WriteLine();
+            double salary = InputHelper.ReadSalary();
 
+            Console.WriteLine();
+            DateTime joiningDate = InputHelper.ReadJoiningDate();
 
-            double salary;
-
-            while (true)
-            {
-                Console.Write("Enter Employee Salary: ");
-
-                if (double.TryParse(Console.ReadLine(), out salary) && salary > 0)
-                {
-                    break;
-                }
-
-                Console.WriteLine("Invalid Salary! Please Enter Again.");
-            }
-
-
-            DateTime joiningDate;
-
-            while (true)
-            {
-                string input = InputHelper.ReadString("Enter Joining Date (dd/MM/yyyy): ");
-
-                if (DateTime.TryParse(input, out joiningDate))
-                {
-                    break;
-                }
-
-                Console.WriteLine("Invalid Date! Please Try Again.");
-            }
-
-
-
-            string phoneNumber;
-
-            while (true)
-            {
-                phoneNumber = InputHelper.ReadString("Enter Phone Number: ");
-
-                if (phoneNumber.Length == 10 &&
-                    long.TryParse(phoneNumber, out _))
-                {
-                    break;
-                }
-
-                Console.WriteLine("Invalid Phone Number!");
-            }
+            Console.WriteLine();
+            string phoneNumber = InputHelper.ReadPhoneNumber();
 
             Employee employeeData = new Employee()
             {
@@ -231,6 +180,7 @@ namespace ZooManagementSystem
 
             foreach (Employee emp in employes)
             {
+                
                 Console.WriteLine($"Employee Id:  {emp.Id}");
                 Console.WriteLine($"Employee Name:  {emp.Name}");
                 Console.WriteLine($"Employee Age:  {emp.Age}");
@@ -239,6 +189,7 @@ namespace ZooManagementSystem
                 Console.WriteLine($"Employee Employee Salary:  {emp.Salary}");
                 Console.WriteLine($"Employee Employee Joining Date:  {emp.JoiningDate}");
                 Console.WriteLine($"Employee Employee Phone Number:  {emp.PhoneNumber}");
+                Console.WriteLine(new string('-', 40));
             }
 
             }
@@ -281,10 +232,11 @@ namespace ZooManagementSystem
                 Console.WriteLine("3. Update Gender");
                 Console.WriteLine("4. Update Employee Role");
                 Console.WriteLine("5. Update Joining Date");
-                Console.WriteLine("6. Update salary ");
+                Console.WriteLine("6. Update salary");
                 Console.WriteLine("7. Update Phone Number");
                 Console.WriteLine("8. Exit & Save");
 
+                Console.WriteLine();
                 int choice = InputHelper.ReadInt("Enter Choice: ");
                 Console.WriteLine();
 
@@ -376,16 +328,19 @@ namespace ZooManagementSystem
         {
             Employee employeeToDelete = null;
 
-            int id = InputHelper.ReadInt("Enter Eployee Id you Want To delete");
+            int id = InputHelper.ReadInt("Enter Employee Id you Want To delete: ");
 
-            
-            foreach(Employee emp in employes)
+
+            foreach (Employee emp in employes)
             {
                 if (emp.Id == id)
-                     employeeToDelete = emp;
-                break;
+                {
+                    employeeToDelete = emp;
+                    break;
+                }
             }
-            if(employeeToDelete != null)
+
+            if (employeeToDelete != null)
             {
                 employes.Remove(employeeToDelete);
 
