@@ -1,18 +1,16 @@
 #include <stdio.h>
-#include <string.h>
-
  
 
 int main()
 {
 
-     const int MAX_TEMPERATURE = 100;
-     int currentTemperature = 24;
+     volatile int sensorValue = 25;
 
-     printf("MAX TEMPERATURE: %d\n", MAX_TEMPERATURE);
-     printf("Current Temperature: %d\n", currentTemperature);
-    
-     
+     printf("Sensor Value before: %d\n", sensorValue);
+
+     sensorValue = 50;
+
+     printf("Sensor Value after: %d\n", sensorValue);
     
     return 0;
 }
