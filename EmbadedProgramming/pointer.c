@@ -1,20 +1,30 @@
 #include <stdio.h>
+#include <string.h>
 
-void Change(int *ptr)
-{
-    *ptr = 100;
-}
+ struct Student
+ {
+    char name[50];
+    int age;
+    double marks;
+ };
 
 int main()
 {
 
-    int number = 50;
+    struct Student student;
 
-    printf("before = %d\n", number);
+    strcpy(student.name, "Tanishq");
+    student.age = 22;
+    student.marks = 99.9;
 
-     Change(&number);
+    struct Student *ptr = &student;
 
-    printf("after = %d\n", number );
+    printf("Name: %s\n", ptr->name);
+    printf("Age: %d\n", ptr->age);
+    printf("Marks: %.1f\n", ptr->marks);
+    
+
+
     
      
     
