@@ -9,7 +9,7 @@ int main()
    int a = 6;
    int b = 3;
 
-   int result = a | b;
+   int result = a ^ b;
 
    printf("Result: %d", result);
      
