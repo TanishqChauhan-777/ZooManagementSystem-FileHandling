@@ -1,16 +1,22 @@
 #include <stdio.h>
+
+void Counter()
+{
+    static int count = 0;
+    count++;
+
+    printf("%d\n", count);
+}
  
 
 int main()
 {
 
-     volatile int sensorValue = 25;
-
-     printf("Sensor Value before: %d\n", sensorValue);
-
-     sensorValue = 50;
-
-     printf("Sensor Value after: %d\n", sensorValue);
-    
+    Counter();
+    Counter();
+    Counter();
+    Counter();
+    Counter();
+     
     return 0;
 }
