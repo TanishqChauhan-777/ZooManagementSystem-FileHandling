@@ -2,15 +2,16 @@
 
 int main()
 {
-    int number = 50;
-    int *ptr = &number;
+    
+    int numbers[3] = {10 , 20 , 30};
 
-     printf("before : %d\n", number);
+    int *ptr = &numbers[0];
 
-     *ptr = 100;
+    printf("index 0 -%d\n", *ptr);
 
-     printf("after : %d\n", number);
+    printf("index 1 -%d\n", *(ptr + 1));
 
+    printf("index 2 -%d\n", *(ptr + 2));
 
     
     return 0;
