@@ -1,25 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 
- typedef struct
- {
-     int temperature;
-     int humidity;
- } SensorData;
+ 
 
 int main()
 {
 
-     SensorData sensor;
+     const int MAX_TEMPERATURE = 100;
+     int currentTemperature = 24;
 
-     sensor.temperature = 25;
-     sensor.humidity = 60;
-
-     SensorData *ptr = &sensor;
-
-     printf("Temprature: %d\n", ptr->temperature);
-     printf("Humidity: %d\n", ptr->humidity);
-
+     printf("MAX TEMPERATURE: %d\n", MAX_TEMPERATURE);
+     printf("Current Temperature: %d\n", currentTemperature);
     
      
     
