@@ -1,22 +1,17 @@
 #include <stdio.h>
 
-void Counter()
-{
-    static int count = 0;
-    count++;
-
-    printf("%d\n", count);
-}
+ 
  
 
 int main()
 {
 
-    Counter();
-    Counter();
-    Counter();
-    Counter();
-    Counter();
+   int a = 6;
+   int b = 3;
+
+   int result = a & b;
+
+   printf("Result: %d", result);
      
     return 0;
 }
