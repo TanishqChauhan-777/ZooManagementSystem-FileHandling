@@ -5,9 +5,13 @@ int main()
     int number = 50;
     int *ptr = &number;
 
-    printf("%d\n", number);
-    printf("%d\n", ptr);
-    printf("%d\n", *ptr);
+     printf("before : %d\n", number);
+
+     *ptr = 100;
+
+     printf("after : %d\n", number);
+
+
     
     return 0;
 }
