@@ -6,10 +6,10 @@
 int main()
 {
 
-   int a = 5;
+   int a = 40;
   
 
-   int result = a << 2;
+   int result = a >> 2;
 
    printf("Result: %d", result);
      
