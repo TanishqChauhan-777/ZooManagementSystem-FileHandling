@@ -6,10 +6,10 @@
 int main()
 {
 
-   int a = 6;
-   int b = 3;
+   int a = 5;
+  
 
-   int result = a ^ b;
+   int result = ~a;
 
    printf("Result: %d", result);
      
